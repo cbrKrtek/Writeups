@@ -30,9 +30,11 @@ _Additionally we need to understand, that the expansion of file is "EXE.MUI"_.
 Why i said about that? Because when user will see a file WEXTRACT.EXE (.MUI will be ignored because .MUI files contain localized resources (texts, interface elements) for programs and the system itself in different languages. 
 ## Q3
 Knowing the exact timestamp of when the malware was first observed can help prioritize response actions. Newly detected malware may require urgent containment and eradication compared to older, well-documented threats. What is the UTC timestamp of the malware's first submission to VirusTotal?
+
 ## Solution
 <img width="1308" height="691" alt="screen_Q3_Red_stealer" src="https://github.com/user-attachments/assets/c0d076b4-2757-4796-b327-1dc24f134d43" />
 In this case you should choose "Details" in VirusTotal and then check history. Then check first Submission.
+
 ## Q4
 Understanding the techniques used by malware helps in strategic security planning. What is the MITRE ATT&CK technique ID for the malware's data collection from the system before exfiltration?
 
@@ -43,7 +45,9 @@ We must to check a section "Collection" because we know from the task that was c
 
 <img width="1394" height="904" alt="Mittre_1005" src="https://github.com/user-attachments/assets/d1e531d9-7b3c-49f5-afa1-393e3fc23e74" />
 I will proof later, that this tactic is relevant to our situation.
+
 ### _What if the task didn't specify that the malware collected data from the system before exfiltration?_
+
 In that case let's check file system actions in Virustotal.
 <img width="1448" height="775" alt="Q4_exception" src="https://github.com/user-attachments/assets/8596e0e1-afe8-4716-ab82-a0afdd8de72b" />
 
