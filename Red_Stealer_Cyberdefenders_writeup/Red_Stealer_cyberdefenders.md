@@ -4,7 +4,7 @@
 *   **Platform:** [CyberDefenders](https://cyberdefenders.org/)
 *   **Challenge:** [RedStealer](https://cyberdefenders.org/blueteam-ctf-challenges/red-stealer/)
 *   **Difficulty:** Easy
-*   **Category:** Threat Intel
+*   **Category:** Threat Inteligence
 *   **Tools:**  `VirusTotal` `MalwareBazaar` `ThreatFox` `Mittre Attack`
 
 ## Scenario
