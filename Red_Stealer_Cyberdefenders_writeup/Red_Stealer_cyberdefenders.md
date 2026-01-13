@@ -34,17 +34,23 @@ Knowing the exact timestamp of when the malware was first observed can help prio
 ## Solution
 <img width="1308" height="691" alt="screen_Q3_Red_stealer" src="https://github.com/user-attachments/assets/c0d076b4-2757-4796-b327-1dc24f134d43" />
 In this case you should choose "Details" in VirusTotal and then check history. Then check first Submission.
-The answer is **"2023-10-06 04:41"**.
+The answer is **2023-10-06 04:41**.
+
 ## Q4
 Understanding the techniques used by malware helps in strategic security planning. What is the MITRE ATT&CK technique ID for the malware's data collection from the system before exfiltration?
 ## Solution
 Let's move to a Mittre Attack and check.
 <img width="1900" height="762" alt="Q4_red_stealer" src="https://github.com/user-attachments/assets/66e71925-129b-4d86-a6e6-95346ddd67c2" />
-We must to check a section "Collection" because we know from the task that was collection from system before exfiltration. Ok, then find a "Data from Local System", click and check the ID in a picture. The answer is **T1005**.
+We must to check a section "Collection" because we know from the task that was collection from system before exfiltration. Ok, then find a "Data from Local System", click and check the ID in a picture.
+
+<img width="1394" height="904" alt="Mittre_1005" src="https://github.com/user-attachments/assets/d1e531d9-7b3c-49f5-afa1-393e3fc23e74" />
+I will proof later, that this tactic is relevant to our situation.
+The answer is **T1005**.
 ### _What if the task didn't specify that the malware collected data from the system before exfiltration?_
 In that case let's check file system actions in Virustotal.
 <img width="1448" height="775" alt="Q4_exception" src="https://github.com/user-attachments/assets/8596e0e1-afe8-4716-ab82-a0afdd8de72b" />
-Then we see that a malware exfiltrated all from a disc C (in a screen it's a part).
+
+Then we see that a malware exfiltrated all from a disc C (in a screen it's a part). So I proved that this tactic is relevant to a malware.
 ## Q5
 Following execution, which social media-related domain names did the malware resolve via DNS queries?
 ## Solution
