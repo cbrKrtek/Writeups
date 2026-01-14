@@ -77,21 +77,37 @@ The attacker (`192.168.56.102`) is actively scanning and interacting with multip
 - Network discovery via NetBIOS and SMB protocols.
 - Long-lived TCP session on port 6200 (possible backdoor).
 
-So, let's check last TCP packages ( и тут картинка где 3804 пакет и выше)
+So, let's check last TCP packages 
+<img width="1877" height="679" alt="3804_and_UP" src="https://github.com/user-attachments/assets/c421e83d-3402-4760-beba-a83f370a1859" />
+
 
 we can see that large packets were transmitted because segments: [PSH,ACK].
 Ok, in that case let's follow TCP stream and look at it:
-(фотка follow_TCP)
-Easy to understand, that it's a base64 encode. So, let's decode it. For that we need to create a new file(let it be input.txt). 
-(картинка decr1)
-I pasted this BASE64 into input.txt and saved.
-In my case I created this file on my Desktop. Then I wrote this:
-(фотка команда декода базы 64)
-And we see that there is a file output.png ( I saw it on my Desktop)
-(фотка ёлочки)
-We see this interesting christmas tree. But we need to find a flag grodno{}. 
-In that case let's find some strings from this picture.
-(Фотка скрипта)
-And if to scroll down we will see a flag:
-(фотка флага)
+<img width="1919" height="942" alt="Followed_TCP_stream" src="https://github.com/user-attachments/assets/b2c51908-146d-4715-862a-2d98405e8272" />
 
+Easy to understand, that it's a base64 encode. So, let's decode it. For that we need to create a new file(let it be input.txt). 
+<img width="288" height="137" alt="decrypt1" src="https://github.com/user-attachments/assets/c6cb2e7f-55e4-4a4a-8957-4f25f395d929" />
+
+I pasted this BASE64 into input.txt and saved.
+
+In my case I created this file on my Desktop. Then I wrote this:
+
+<img width="317" height="132" alt="команда декода базы64" src="https://github.com/user-attachments/assets/61d54920-a04e-4cc5-8bfc-854db4042646" />
+
+And we see that there is a file output.png ( I saw it on my Desktop)
+
+<img width="852" height="837" alt="ёлочка " src="https://github.com/user-attachments/assets/50ac0b38-6e28-4821-9103-dbcedc4f5462" />
+
+We see this interesting christmas tree. But we need to find a flag grodno{}.
+
+In that case let's find some strings from this picture.
+
+<img width="264" height="40" alt="script" src="https://github.com/user-attachments/assets/1df7480d-c5d7-42c3-88a0-9494a0e37466" />
+
+And if to scroll down we will see a flag:
+
+<img width="302" height="99" alt="FLAG" src="https://github.com/user-attachments/assets/a4be97d0-d6d6-4e04-833f-afaca0a7127b" />
+
+## Conclusion
+Thanks to the authors of NY CTF 2026 for the interesting challenges and the opportunity to review the challenge from the participant's view.
+I think this task will accept specialists, who understand the basics of network and Wireshark, and little bit skills in a steganography :) 
