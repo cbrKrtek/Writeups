@@ -1,8 +1,10 @@
 
-# 🔍 **Writeup task "exFill" | New Year CTF 2026**
+# Writeup: NY CTF 2026  | exFill by CbrKrtek
 
-</div>
-
+## Challenge Info
+*   **Difficulty:** Easy
+*   **Category:** Network Forenzics
+*   **Tools:**  `Wireshark`
 ## 📋 **Description**
 
 > *Sniffers on the network can sometimes tell a lot*
@@ -105,4 +107,4 @@ And if to scroll down we will see a flag:
 
 ## Conclusion
 Thanks to the authors of NY CTF 2026 for the interesting challenges and the opportunity to review the challenge from the participant's view.
-I think this task will accept specialists, who understand the basics of network and Wireshark, and little bit skills in a steganography :) 
+I think this task will accept specialists, who understand the basics of network and Wireshark, and little bit skills in a steganography.See you soon :hand:
