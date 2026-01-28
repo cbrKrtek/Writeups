@@ -18,15 +18,15 @@ So, let's analyze a capture.pcap file and understand, what happened:
 - **Local network subnet**: `192.168.56.0/24`
 - **Key hosts**:
   - `192.168.56.102` – Likely an attacker or scanning machine.
-  - `192.168.56.103` – Likely the target machine (named *METASPLOITABLE*, a known vulnerable VM).
+  - `192.168.56.103` – vsFTPd ip. ( about that i will talk a little bit later:) )
   - `192.168.56.100` – Another host on the network (possibly a client).
   - `127.0.0.1` – Loopback traffic (local services on a host).
 - **Protocols observed**: TCP, UDP, ARP, DHCP, FTP, SSH, SMTP, HTTP, SMB, MySQL, VNC, RPC, NetBIOS, TLS, and others.
 
 ---
 
-### **2. Observed Network Activities**
-
+### **2. Analyzing Network Activities**
+In a tasks, which have a .pcap file, i prefer to analyze all packets and build a kill chain. It's very important, btw how we will find a flag, if we didn't build a kill chain? :grin:
 #### **a. ARP Activity (Address Resolution Protocol)**
 - Frequent ARP requests/replies between `.102` and `.103`.
 - Purpose: Mapping IP addresses to MAC addresses for LAN communication.
@@ -69,13 +69,8 @@ The attacker (`192.168.56.102`) is actively scanning and interacting with multip
 #### **b. Exploitation Attempts**
 - **Port 4444 activity**: High-volume data transfer from `.103` to `.102`. Suspicious for reverse shell or data exfiltration.
 - **Multiple RST packets**: Indicate failed connection attempts or closed ports.
-- **FTP with strange commands**: Username `3FVka:)` may be an attempt at command injection.
-- **SMB authentication attempts**: `NTLMSSP_NEGOTIATE` and `NTLMSSP_AUTH`, suggesting attempts to access Windows shares.
-
-#### **c. Post-Exploitation & Lateral Movement**
-- Possible command execution and data transfer via port 4444.
-- Network discovery via NetBIOS and SMB protocols.
-- Long-lived TCP session on port 6200 (possible backdoor).
+- **FTP with CVE**: Username `3FVka:)` is an attempt at command injection!
+  So, let's return to vsFTPd. Not hard to understand, that during the reconnaissance phase, the attacker identified a vulnerable service here,and this version contains a hidden function, or backdoor, within its source code, cataloged as CVE-2011-2523. With a straightforward mechanism: unauthorized access is granted by entering any username that ends with the characters :) followed by an arbitrary password.
 
 So, let's check last TCP packages 
 <img width="1877" height="679" alt="3804_and_UP" src="https://github.com/user-attachments/assets/c421e83d-3402-4760-beba-a83f370a1859" />
